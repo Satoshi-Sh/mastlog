@@ -25,10 +25,26 @@
 
 .toot-content {
   margin: 4px;
+  width: 80vw;
   max-width: 900px;
 }
 
 .sub-time {
   font-size: 14px;
   color: rgba(139, 132, 132, 0.781);
+}
+.img-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.image-container {
+  width: 50vw;
+  max-width: 400px;
+  margin: 20px;
+}
+.toot-img {
+  object-fit: cover;
+  width: 100%;
 }

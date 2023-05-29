@@ -23,11 +23,13 @@ const TootSec: React.FC<TootProps> = (props) => {
         <div className="img-div">
           {data.media_attachments.length > 0 ? (
             data.media_attachments.map((media, index) => (
-              <img
-                key={index}
-                src={String(media.preview_url)}
-                alt={String(media.description)}
-              />
+              <div className="image-container" key={index}>
+                <img
+                  className="toot-img"
+                  src={String(media.preview_url)}
+                  alt={String(media.description)}
+                />
+              </div>
             ))
           ) : (
             <></>
