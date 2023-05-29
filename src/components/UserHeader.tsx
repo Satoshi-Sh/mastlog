@@ -1,6 +1,7 @@
 import "./UserHeader.css";
 import React, { useEffect, useState } from "react";
 import { Account, TabProps } from "../interfaces/interfaces";
+import { convertHtmlToString } from "../utils/utils";
 
 //follow and follower count component
 
@@ -17,12 +18,6 @@ const Tab: React.FC<TabProps> = (props) => {
   );
 };
 
-const convertHtmlToString = (html: string): string => {
-  const parser = new DOMParser();
-  const noteElement = parser.parseFromString(html, "text/html").body;
-  return noteElement.textContent || "";
-};
-
 const UserHeader: React.FC = () => {
   const [accountData, setAccountData] = useState<Account | null>(null);
 
@@ -31,7 +26,6 @@ const UserHeader: React.FC = () => {
     fetch("http://localhost:3000/api/header")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data["data"]["account"]);
         // Update the state with the received data
         setAccountData(data["data"]["account"]);
       })

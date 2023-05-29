@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { DailyData } from "../interfaces/interfaces";
 import DayHeader from "../parts/DayHeader";
+import TootSec from "../parts/TootSec";
+import { Whole } from "../interfaces/interfaces";
 
 const DailyBoard = () => {
   const [dailyData, setDailyData] = useState<DailyData[]>([]);
@@ -29,11 +31,11 @@ const DailyBoard = () => {
                   dayName={data._id.dayName}
                   count={data.count}
                 />
-                <ul>
-                  {data.items.map((item) => (
-                    <li key={item._id}>{item.name}</li>
+                <div>
+                  {data.items.map((item: Whole, index: number) => (
+                    <TootSec data={item} key={index} />
                   ))}
-                </ul>
+                </div>
               </div>
             );
           })

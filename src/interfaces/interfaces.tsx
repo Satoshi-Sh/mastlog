@@ -1,3 +1,32 @@
+interface mediaAttachment {
+  id: { type: String; required: true };
+  type: { type: String; required: true };
+  url: { type: String; required: true };
+  preview_url: { type: String; required: true };
+  remote_url: String;
+  text_url: String;
+  meta: {
+    original: {
+      width: Number;
+      height: Number;
+      size: String;
+      aspect: Number;
+    };
+    small: {
+      width: Number;
+      height: Number;
+      size: String;
+      aspect: Number;
+    };
+    focus: {
+      x: Number;
+      y: Number;
+    };
+  };
+  description: String;
+  blurhash: String;
+}
+
 export interface Whole {
   _id: string;
   event: string;
@@ -23,7 +52,7 @@ export interface Whole {
       website: string | null;
     };
     account: Account;
-    media_attachments: any[]; // Update this type accordingly
+    media_attachments: mediaAttachment[]; // Update this type accordingly
     mentions: Account[]; // Update this type accordingly
     tags: string[]; // Update this type accordingly
     emojis: any[]; // Update this type accordingly
@@ -67,6 +96,10 @@ interface Field {
   value: string;
   verified_at: string | null;
   _id: string;
+}
+
+export interface TootProps {
+  data: Whole;
 }
 
 export interface TabProps {

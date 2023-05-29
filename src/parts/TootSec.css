@@ -1,0 +1,34 @@
+.toot-section {
+  border-bottom: solid 1px rgb(212, 201, 201);
+  padding: 20px;
+  margin: 0;
+  display: flex;
+}
+
+.avatar2 {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.account-name {
+  color: rgb(172, 159, 159);
+}
+
+.content-header-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+}
+
+.toot-content {
+  margin: 4px;
+  max-width: 900px;
+}
+
+.sub-time {
+  font-size: 14px;
+  color: rgba(139, 132, 132, 0.781);
+}
