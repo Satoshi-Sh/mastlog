@@ -2,6 +2,8 @@ import "./UserHeader.css";
 import React, { useEffect, useState } from "react";
 import { Account, TabProps } from "../interfaces/interfaces";
 import { convertHtmlToString } from "../utils/utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMastodon, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 //follow and follower count component
 
@@ -53,9 +55,7 @@ const UserHeader: React.FC = () => {
               <img src={accountData.avatar} className="avatar"></img>
               <div className="avatar-div">
                 <h2>
-                  <i className="fab" id="mastlogo">
-                    &#xf4f6;
-                  </i>
+                  <FontAwesomeIcon icon={faMastodon} id="mastlogo" />
                   <a className="masto-link" href={accountData.url}>
                     {accountData.display_name}
                   </a>
@@ -76,7 +76,8 @@ const UserHeader: React.FC = () => {
               />
             </div>
             <div className="git-div">
-              <i className="fab">&#xf09b;</i>
+              <FontAwesomeIcon icon={faGithub} />
+
               <a className="masto-link" href="https://github.com/Satoshi-Sh">
                 https://github.com/Satoshi-Sh
               </a>
