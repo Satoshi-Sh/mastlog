@@ -4,7 +4,7 @@ import { Account, TabProps } from "../interfaces/interfaces";
 import { convertHtmlToString } from "../utils/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMastodon, faGithub } from "@fortawesome/free-brands-svg-icons";
-
+import { API_URL } from "../utils/const";
 //follow and follower count component
 
 const Tab: React.FC<TabProps> = (props) => {
@@ -25,7 +25,7 @@ const UserHeader: React.FC = () => {
 
   useEffect(() => {
     // Make an HTTP GET request
-    fetch("http://localhost:3000/api/header")
+    fetch(`${API_URL}/header`)
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the received data

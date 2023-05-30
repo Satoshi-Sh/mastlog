@@ -1,6 +1,6 @@
 import "./DayHeader.css";
 import { DayProps } from "../interfaces/interfaces";
-const dayArr = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+export const dayArr = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const DayHeader: React.FC<DayProps> = (props) => {
   const { day, dayName, count } = props;
   const name: string = dayArr[dayName - 1];

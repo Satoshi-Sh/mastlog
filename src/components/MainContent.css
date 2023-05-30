@@ -9,7 +9,8 @@
   height: auto;
   background-color: rgba(248, 248, 255, 0.37);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content {

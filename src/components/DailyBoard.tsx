@@ -3,16 +3,15 @@ import { DailyData } from "../interfaces/interfaces";
 import DayHeader from "../parts/DayHeader";
 import TootSec from "../parts/TootSec";
 import { Whole } from "../interfaces/interfaces";
-
+import { API_URL } from "../utils/const";
 const DailyBoard = () => {
   const [dailyData, setDailyData] = useState<DailyData[]>([]);
 
   useEffect(() => {
     // Make an HTTP GET request
-    fetch("http://localhost:3000/api/toots")
+    fetch(`${API_URL}/toots`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[1].items[0]);
         // Update the state with the received data
         setDailyData(data);
       })

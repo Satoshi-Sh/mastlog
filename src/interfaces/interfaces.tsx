@@ -122,3 +122,18 @@ export interface DailyData {
   count: number;
   items: any[]; // Adjust the type of items based on your actual data structure
 }
+
+export interface SideBoxProps {
+  title: string;
+}
+
+export interface SideBoxInterface {
+  _id: string;
+  count: number;
+  url: string;
+}
+
+export interface RecentInterface {
+  _id: { day: string; dayName: number };
+  count: number;
+}
