@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 350px;
+  flex-shrink: 0;
+  height: auto;
+  background-color: rgba(248, 248, 255, 0.37);
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+@media (max-width: 1373px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    margin-top: 20px; /* Adjust the spacing as needed */
+  }
+}

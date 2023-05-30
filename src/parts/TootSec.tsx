@@ -3,7 +3,6 @@ import { convertHtmlToString } from "../utils/utils";
 import "./TootSec.css";
 const TootSec: React.FC<TootProps> = (props) => {
   const { data } = props.data;
-  console.log(data);
   const { account } = data;
 
   return (

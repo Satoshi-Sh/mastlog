@@ -1,0 +1,38 @@
+.ribbon {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    to right,
+    lightblue,
+    #3498db
+  ); /* Ribbon color gradation */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.ribbon::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-left: 20px solid #3498db; /* Ribbon color at the bottom */
+  border-bottom: 20px solid transparent;
+}
+
+.ribbon::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #3498db; /* Ribbon color at the bottom */
+  border-top: 20px solid transparent;
+}
+
+.ribbon-text {
+  color: #fff; /* Text color */
+  margin: 0;
+  font-size: 24px;
+  padding: 0 10px;
+}

@@ -12,7 +12,7 @@ const DailyBoard = () => {
     fetch("http://localhost:3000/api/toots")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[0].items[0]);
+        console.log(data[1].items[0]);
         // Update the state with the received data
         setDailyData(data);
       })
@@ -21,7 +21,7 @@ const DailyBoard = () => {
       });
   }, []);
   return (
-    <div className="daily-div">
+    <div className="daily-div main-content">
       {dailyData.length > 0
         ? dailyData.map((data, index) => {
             return (

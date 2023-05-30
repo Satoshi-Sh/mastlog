@@ -2,14 +2,14 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import UserHeader from "./components/UserHeader";
-import DailyBoard from "./components/DailyBoard";
-
+import RibbonHeader from "./parts/RibbonHeader";
+import MainContent from "./components/MainContent";
 function App() {
   return (
     <div className="App">
-      <h1>Mastlog</h1>
+      <RibbonHeader />
       <UserHeader />
-      <DailyBoard />
+      <MainContent />
     </div>
   );
 }
