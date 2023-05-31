@@ -137,3 +137,8 @@ export interface RecentInterface {
   _id: { day: string; dayName: number };
   count: number;
 }
+
+export interface HashtagInterface {
+  _id: string;
+  count: number;
+}
