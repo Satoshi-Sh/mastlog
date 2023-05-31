@@ -1,5 +1,4 @@
 import { TootProps } from "../interfaces/interfaces";
-import { convertHtmlToString } from "../utils/utils";
 import "./TootSec.css";
 const TootSec: React.FC<TootProps> = (props) => {
   const { data } = props.data;
@@ -18,7 +17,10 @@ const TootSec: React.FC<TootProps> = (props) => {
             {String(data.created_at).split("T").at(0)}
           </span>
         </div>
-        <p className="toot-content">{convertHtmlToString(data.content)}</p>
+        <p
+          className="toot-content"
+          dangerouslySetInnerHTML={{ __html: data.content }}
+        ></p>
         <div className="img-div">
           {data.media_attachments.length > 0 ? (
             data.media_attachments.map((media, index) => (

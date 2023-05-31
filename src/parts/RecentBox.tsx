@@ -12,7 +12,6 @@ const RecentBox = () => {
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the received data
-        console.log(data);
         setData(data);
       })
       .catch((error) => {
