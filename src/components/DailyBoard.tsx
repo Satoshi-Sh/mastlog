@@ -5,10 +5,22 @@ import TootSec from "../parts/TootSec";
 import { Whole } from "../interfaces/interfaces";
 import { API_URL } from "../utils/const";
 import { DailyProps } from "../interfaces/interfaces";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 const DailyBoard: React.FC<DailyProps> = (props) => {
   const { category } = props;
   let { value } = useParams();
+
+  const { pathname } = useLocation();
+  useEffect(() => {
+    scrollToTop();
+  }, [pathname]);
+  const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 8);
+    }
+  };
 
   if (typeof value === "undefined") {
     value = "";
