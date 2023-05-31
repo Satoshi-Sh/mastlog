@@ -1,8 +1,19 @@
 import { TootProps } from "../interfaces/interfaces";
 import "./TootSec.css";
+import PopupImage from "./PopupImage";
+import { useState } from "react";
 const TootSec: React.FC<TootProps> = (props) => {
   const { data } = props.data;
   const { account } = data;
+  const [popupImage, setPopupImage] = useState<string | null>(null);
+
+  const handleImageClick = (imageUrl: string) => {
+    setPopupImage(imageUrl);
+  };
+
+  const handleClosePopup = () => {
+    setPopupImage(null);
+  };
 
   return (
     <div className="toot-section">
@@ -29,7 +40,16 @@ const TootSec: React.FC<TootProps> = (props) => {
                   className="toot-img"
                   src={String(media.preview_url)}
                   alt={String(media.description)}
+                  onClick={() => {
+                    handleImageClick(String(media.url));
+                  }}
                 />
+                {popupImage && (
+                  <PopupImage
+                    imageUrl={popupImage}
+                    onClose={handleClosePopup}
+                  />
+                )}
               </div>
             ))
           ) : (

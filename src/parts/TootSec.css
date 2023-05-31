@@ -47,7 +47,9 @@
 .toot-img {
   object-fit: cover;
   width: 100%;
+  cursor: pointer;
 }
+
 .toot-content p a {
   text-decoration: none;
   color: blue;

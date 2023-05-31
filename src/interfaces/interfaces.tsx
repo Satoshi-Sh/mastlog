@@ -147,3 +147,8 @@ export interface DailyProps {
   category: string;
   value?: string;
 }
+
+export interface PopupProps {
+  imageUrl: string;
+  onClose: () => void;
+}
