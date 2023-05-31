@@ -2,6 +2,7 @@ import DailyBoard from "./DailyBoard";
 import Sidebar from "./Sidebar";
 import "./MainContent.css";
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const MainContent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -18,8 +19,16 @@ const MainContent = () => {
   }, []);
   return (
     <div className={`container ${isMobile ? "mobile" : ""}`}>
-      <DailyBoard />
-      <Sidebar />
+      <Router>
+        <Routes>
+          <Route path="/" element={<DailyBoard category="toots" />} />
+          <Route
+            path="/hashtags/:value"
+            element={<DailyBoard category="hashtags" />}
+          />
+        </Routes>
+        <Sidebar />
+      </Router>
     </div>
   );
 };

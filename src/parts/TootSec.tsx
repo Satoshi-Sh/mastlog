@@ -17,10 +17,10 @@ const TootSec: React.FC<TootProps> = (props) => {
             {String(data.created_at).split("T").at(0)}
           </span>
         </div>
-        <p
+        <div
           className="toot-content"
           dangerouslySetInnerHTML={{ __html: data.content }}
-        ></p>
+        ></div>
         <div className="img-div">
           {data.media_attachments.length > 0 ? (
             data.media_attachments.map((media, index) => (

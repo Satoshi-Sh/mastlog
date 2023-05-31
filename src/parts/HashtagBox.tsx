@@ -3,6 +3,7 @@ import { HashtagInterface } from "../interfaces/interfaces";
 import "./RecentBox.css";
 import { API_URL } from "../utils/const";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const HashtagBox = () => {
   const [data, setData] = useState<HashtagInterface[]>([]);
@@ -25,7 +26,9 @@ const HashtagBox = () => {
         {data.map((d, index) => {
           return (
             <div className="row" key={index}>
-              <div className="row-header">#{d._id}</div>
+              <div className="row-header">
+                <Link to={`/hashtags/${d._id}`}>#{d._id}</Link>
+              </div>
               <span>{d.count}</span>
             </div>
           );

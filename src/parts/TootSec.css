@@ -48,6 +48,10 @@
   object-fit: cover;
   width: 100%;
 }
+.toot-content p a {
+  text-decoration: none;
+  color: blue;
+}
 
 .source-link {
   text-decoration: none;

@@ -142,3 +142,8 @@ export interface HashtagInterface {
   _id: string;
   count: number;
 }
+
+export interface DailyProps {
+  category: string;
+  value?: string;
+}

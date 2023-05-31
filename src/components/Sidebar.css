@@ -4,3 +4,16 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+.home-link {
+  color: rgba(128, 128, 128, 0.671);
+  text-decoration: none;
+}
+
+.home-link:hover {
+  color: rgba(128, 128, 128, 0.9);
+}
+
+.home-link-h {
+  margin: 4px;
+}

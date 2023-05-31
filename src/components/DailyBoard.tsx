@@ -4,12 +4,20 @@ import DayHeader from "../parts/DayHeader";
 import TootSec from "../parts/TootSec";
 import { Whole } from "../interfaces/interfaces";
 import { API_URL } from "../utils/const";
-const DailyBoard = () => {
+import { DailyProps } from "../interfaces/interfaces";
+import { useParams } from "react-router-dom";
+const DailyBoard: React.FC<DailyProps> = (props) => {
+  const { category } = props;
+  let { value } = useParams();
+
+  if (typeof value === "undefined") {
+    value = "";
+  }
   const [dailyData, setDailyData] = useState<DailyData[]>([]);
 
   useEffect(() => {
     // Make an HTTP GET request
-    fetch(`${API_URL}/toots`)
+    fetch(`${API_URL}/${category}/${value}`)
       .then((response) => response.json())
       .then((data) => {
         // Update the state with the received data
@@ -18,7 +26,7 @@ const DailyBoard = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, []);
+  }, [value]);
   return (
     <div className="daily-div main-content">
       {dailyData.length > 0
