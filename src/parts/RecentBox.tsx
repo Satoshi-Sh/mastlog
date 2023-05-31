@@ -1,5 +1,6 @@
 import "./SideBox.css";
 import { RecentInterface } from "../interfaces/interfaces";
+import "./RecentBox.css";
 import { API_URL } from "../utils/const";
 import React, { useEffect, useState } from "react";
 import { dayArr } from "./DayHeader";
