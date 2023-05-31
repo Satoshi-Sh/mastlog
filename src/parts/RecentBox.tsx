@@ -4,6 +4,7 @@ import "./RecentBox.css";
 import { API_URL } from "../utils/const";
 import React, { useEffect, useState } from "react";
 import { dayArr } from "./DayHeader";
+import { Link } from "react-router-dom";
 
 const RecentBox = () => {
   const [data, setData] = useState<RecentInterface[]>([]);
@@ -29,7 +30,9 @@ const RecentBox = () => {
           return (
             <div className="row" key={index}>
               <div className="row-header">
-                {date} {name}
+                <Link to={`/date/${date}`}>
+                  {date} {name}
+                </Link>
               </div>
               <span>{d.count}</span>
             </div>

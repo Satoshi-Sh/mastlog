@@ -3,6 +3,7 @@ import { SideBoxProps } from "../interfaces/interfaces";
 import { API_URL } from "../utils/const";
 import { SideBoxInterface } from "../interfaces/interfaces";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const SideBox: React.FC<SideBoxProps> = (props) => {
   const { title } = props;
@@ -28,7 +29,7 @@ const SideBox: React.FC<SideBoxProps> = (props) => {
             <div className="row" key={index}>
               <div className="row-header">
                 &#9742;
-                <a href={d.url}>@{d._id}</a>
+                <Link to={`/friends/${d._id}`}>@{d._id}</Link>
               </div>
               <span>{d.count}</span>
             </div>
