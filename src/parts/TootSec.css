@@ -48,3 +48,12 @@
   object-fit: cover;
   width: 100%;
 }
+
+.source-link {
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.582);
+}
+
+.source-link:hover {
+  color: lightblue;
+}

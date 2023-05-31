@@ -36,6 +36,11 @@ const TootSec: React.FC<TootProps> = (props) => {
             <></>
           )}
         </div>
+        <div>
+          <a className="source-link" href={data.url}>
+            Source
+          </a>
+        </div>
         <span className="sub-time">
           Posted at {String(data.created_at).split("T").at(-1)?.slice(0, 5)}
         </span>
