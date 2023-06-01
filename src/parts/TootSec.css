@@ -1,6 +1,6 @@
 .toot-section {
+  max-width: 100%;
   border-bottom: solid 1px rgb(212, 201, 201);
-  padding: 20px;
   margin: 0;
   display: flex;
 }
@@ -62,4 +62,25 @@
 
 .source-link:hover {
   color: lightblue;
+}
+
+.invisible {
+  display: inline-block;
+  max-width: 90%;
+}
+
+@media (max-width: 414px) {
+  .toot-content {
+    margin: 0;
+  }
+  .toot-content p {
+    max-width: 90%;
+  }
+  .toot-content .content-header-div {
+    max-width: 100%;
+    width: 230px;
+  }
+  .toot-section {
+    max-width: 100%;
+  }
 }

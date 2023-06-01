@@ -40,14 +40,9 @@ const UserHeader: React.FC = () => {
     <div className="userheader-div">
       {accountData ? (
         <div
+          className="background-div"
           style={{
             backgroundImage: `url(${accountData.header})`,
-            backgroundSize: "cover",
-            height: "300px",
-            width: "90vw",
-            margin: "20px",
-            borderRadius: "4px",
-            position: "relative",
           }}
         >
           <div className="info-div">

@@ -6,6 +6,12 @@
   margin-top: 15px;
 }
 
+@media (max-width: 320px) {
+  .sidebox {
+    width: 80%;
+  }
+}
+
 .rows {
   display: flex;
   flex-direction: column;
