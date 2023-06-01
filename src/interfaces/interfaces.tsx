@@ -157,4 +157,5 @@ export interface ControlProps {
   hasBefore: boolean;
   hasNext: boolean;
   value: string;
+  category: string;
 }

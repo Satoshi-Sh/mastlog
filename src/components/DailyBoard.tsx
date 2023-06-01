@@ -13,9 +13,10 @@ import { useParams, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const ControlButtons: React.FC<ControlProps> = (props) => {
-  const { hasBefore, hasNext, value } = props;
-  const navigate = useNavigate();
+  const { hasBefore, hasNext, value, category } = props;
 
+  const navigate = useNavigate();
+  if (category !== "toots") return null;
   const nextPage = () => {
     const page = Number(value) + 1;
     navigate(`/toots/${page}`);
@@ -92,6 +93,7 @@ const DailyBoard: React.FC<DailyProps> = (props) => {
         hasNext={hasNext}
         hasBefore={hasBefore}
         value={value}
+        category={category}
       ></ControlButtons>
       {dailyData.length > 0
         ? dailyData.map((data, index) => {
@@ -115,6 +117,7 @@ const DailyBoard: React.FC<DailyProps> = (props) => {
         hasNext={hasNext}
         hasBefore={hasBefore}
         value={value}
+        category={category}
       ></ControlButtons>
     </div>
   );
