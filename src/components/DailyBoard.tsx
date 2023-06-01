@@ -1,11 +1,50 @@
 import React, { useEffect, useState } from "react";
-import { DailyData } from "../interfaces/interfaces";
+import {
+  DailyData,
+  Whole,
+  DailyProps,
+  ControlProps,
+} from "../interfaces/interfaces";
+import "./DailyBoard.css";
 import DayHeader from "../parts/DayHeader";
 import TootSec from "../parts/TootSec";
-import { Whole } from "../interfaces/interfaces";
 import { API_URL } from "../utils/const";
-import { DailyProps } from "../interfaces/interfaces";
 import { useParams, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const ControlButtons: React.FC<ControlProps> = (props) => {
+  const { hasBefore, hasNext, value } = props;
+  const navigate = useNavigate();
+
+  const nextPage = () => {
+    const page = Number(value) + 1;
+    navigate(`/toots/${page}`);
+  };
+  const beforePage = () => {
+    const page = Number(value) - 1;
+    navigate(`/toots/${page}`);
+  };
+
+  return (
+    <div className="buttons">
+      {hasBefore ? (
+        <button className="custom-button" onClick={beforePage}>
+          Back
+        </button>
+      ) : (
+        <></>
+      )}
+      {hasNext ? (
+        <button className="custom-button" onClick={nextPage}>
+          Next
+        </button>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
 const DailyBoard: React.FC<DailyProps> = (props) => {
   const { category } = props;
   let { value } = useParams();
@@ -23,17 +62,25 @@ const DailyBoard: React.FC<DailyProps> = (props) => {
   };
 
   if (typeof value === "undefined") {
-    value = "";
+    value = "1";
   }
   const [dailyData, setDailyData] = useState<DailyData[]>([]);
-
+  const [hasNext, setHasNext] = useState<boolean>(true);
+  const [hasBefore, setHasBefore] = useState<boolean>(false);
   useEffect(() => {
     // Make an HTTP GET request
     fetch(`${API_URL}/${category}/${value}`)
       .then((response) => response.json())
       .then((data) => {
-        // Update the state with the received data
-        setDailyData(data);
+        // for pagination
+        if (data.hasOwnProperty("hasNext")) {
+          setDailyData(data.toots);
+          setHasNext(data.hasNext);
+          setHasBefore(data.hasBefore);
+        } else {
+          // Update the state with the received data
+          setDailyData(data);
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -41,6 +88,11 @@ const DailyBoard: React.FC<DailyProps> = (props) => {
   }, [value]);
   return (
     <div className="daily-div main-content">
+      <ControlButtons
+        hasNext={hasNext}
+        hasBefore={hasBefore}
+        value={value}
+      ></ControlButtons>
       {dailyData.length > 0
         ? dailyData.map((data, index) => {
             return (
@@ -59,6 +111,11 @@ const DailyBoard: React.FC<DailyProps> = (props) => {
             );
           })
         : "Loading..."}
+      <ControlButtons
+        hasNext={hasNext}
+        hasBefore={hasBefore}
+        value={value}
+      ></ControlButtons>
     </div>
   );
 };

@@ -152,3 +152,9 @@ export interface PopupProps {
   imageUrl: string;
   onClose: () => void;
 }
+
+export interface ControlProps {
+  hasBefore: boolean;
+  hasNext: boolean;
+  value: string;
+}

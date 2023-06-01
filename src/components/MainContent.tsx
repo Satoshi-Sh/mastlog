@@ -23,6 +23,10 @@ const MainContent = () => {
         <Routes>
           <Route path="/" element={<DailyBoard category="toots" />} />
           <Route
+            path="/toots/:value"
+            element={<DailyBoard category="toots" />}
+          />
+          <Route
             path="/hashtags/:value"
             element={<DailyBoard category="hashtags" />}
           />
