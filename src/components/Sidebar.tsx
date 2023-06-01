@@ -2,7 +2,10 @@ import "./Sidebar.css"; // Import CSS file for styling
 import SideBox from "../parts/SideBox";
 import RecentBox from "../parts/RecentBox";
 import HashtagBox from "../parts/HashtagBox";
+import MyCalendar from "../parts/MyCalendar";
+
 import { Link } from "react-router-dom";
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -12,6 +15,7 @@ const Sidebar = () => {
       <HashtagBox />
       <RecentBox />
       <SideBox title="Friends" />
+      <MyCalendar />
     </div>
   );
 };
