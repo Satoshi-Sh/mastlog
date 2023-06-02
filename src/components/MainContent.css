@@ -17,7 +17,7 @@
   flex-grow: 1;
 }
 
-@media (max-width: 1373px) {
+@media (max-width: 1320px) {
   .container {
     flex-direction: column;
   }
