@@ -22,3 +22,8 @@
 .custom-button:hover {
   background-color: #45a049;
 }
+
+.message {
+  font-size: 30px;
+  text-align: center;
+}

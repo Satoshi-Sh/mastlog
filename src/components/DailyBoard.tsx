@@ -95,24 +95,29 @@ const DailyBoard: React.FC<DailyProps> = (props) => {
         value={value}
         category={category}
       ></ControlButtons>
-      {dailyData.length > 0
-        ? dailyData.map((data, index) => {
-            return (
-              <div key={index}>
-                <DayHeader
-                  day={data._id.day}
-                  dayName={data._id.dayName}
-                  count={data.count}
-                />
-                <div>
-                  {data.items.map((item: Whole, index: number) => (
-                    <TootSec data={item} key={index} />
-                  ))}
-                </div>
+      {dailyData ? (
+        dailyData.length > 0 ? (
+          dailyData.map((data, index) => (
+            <div key={index}>
+              <DayHeader
+                day={data._id.day}
+                dayName={data._id.dayName}
+                count={data.count}
+              />
+              <div>
+                {data.items.map((item: Whole, index: number) => (
+                  <TootSec data={item} key={index} />
+                ))}
               </div>
-            );
-          })
-        : "Loading..."}
+            </div>
+          ))
+        ) : (
+          <div className="message">No toots...</div>
+        )
+      ) : (
+        <div className="message">Loading...</div>
+      )}
+
       <ControlButtons
         hasNext={hasNext}
         hasBefore={hasBefore}

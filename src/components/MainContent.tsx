@@ -35,6 +35,10 @@ const MainContent = () => {
             path="/friends/:value"
             element={<DailyBoard category="friends" />}
           />
+          <Route
+            path="/keyword/:value"
+            element={<DailyBoard category="keyword" />}
+          />
         </Routes>
         <Sidebar />
       </Router>
