@@ -19,7 +19,7 @@ const MainContent = () => {
   }, []);
   return (
     <div className={`container ${isMobile ? "mobile" : ""}`}>
-      <Router>
+      <Router basename="/mastlog">
         <Routes>
           <Route path="/" element={<DailyBoard category="toots" />} />
           <Route
