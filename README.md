@@ -32,3 +32,9 @@ You can check live page [here](http://satoshis-developer.xyz/mastlog/)
   
 ## Reference 
 This application was inspirted by a Japanese webservice named [Twilog](https://twilog.togetter.com/). They provide the users to create a blog from their twitter account.
+  
+## Views 
+<p align='center'>
+<img src ='https://github.com/Satoshi-Sh/git_resource/blob/main/mastlog.gif'/>
+</p>
+  
