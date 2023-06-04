@@ -6,7 +6,7 @@
 This react application was built to show my archaived Mastodon toots data. Users can filter my toots by hashtag,mention, date, and also can search toots by keyword.
 
 ## Why I made this?
-The reason why I made Mastlog is that I'm more active in Mastodon and I rarely use my blog website. It's a good idea to make a blog from my Mastodon account, where I talked about my programming journey and hobbies, and also talked with various friends including more experienced developers. 
+The reason why I made Mastlog is that I'm more active in Mastodon and I rarely use my blog website. It's a good idea to make a blog from my Mastodon account, where I talk about my programming journey and hobbies, and also interact with various friends including more experienced developers. 
   
 ## Reading Bot 
 - [GitHub Repo](https://github.com/Satoshi-Sh/reading-bot)
