@@ -1,1 +1,1 @@
-export const API_URL = "http://satoshis-developer.xyz:3002/api";
+export const API_URL = "https://satoshis-developer.xyz:3002/api";
